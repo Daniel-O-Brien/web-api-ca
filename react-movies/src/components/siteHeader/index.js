@@ -7,10 +7,12 @@ import Button from "@mui/material/Button";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
-import { useNavigate } from "react-router-dom";
+import {Route, useNavigate} from "react-router-dom";
 import { styled } from '@mui/material/styles';
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import LoginPage from "../../pages/loginPage";
+import SignUpPage from "../../pages/signUpPage";
 
 const Offset = styled('div')(({ theme }) => theme.mixins.toolbar);
 
@@ -30,6 +32,8 @@ const SiteHeader = ({ history }) => {
         { label: "Trending", path: "/movies/trending" },
         { label: "Top Rated", path: "/movies/toprated" },
         { label: "Watchlist", path: "/movies/watchlist" },
+        { label: "Sign up", path: "/signup" },
+        { label: "Login", path: "/login" },
     ];
 
     const handleMenuSelect = (pageURL) => {
