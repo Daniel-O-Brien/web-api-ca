@@ -1,6 +1,6 @@
 # Assignment 2 - Web API.
 
-Name: Your Name
+Name: Daniel O'Brien
 
 ## Features.
 
@@ -21,13 +21,25 @@ Describe any configuration that needs to take place before running the API. For 
 
 REMEMBER: DON'T PUT YOUR OWN USERNAMES/PASSWORDS/AUTH KEYS IN THE README OR ON GITHUB, just placeholders as indicated below:
 
+
+react-movies .env file
+
+----------------------------
+REACT_APP_TMDB_KEY="apikey"
+
+FAST_REFRESH=false
+
+-----------------------------
+
+movies-api .env file
+
 ______________________
-NODEENV=development
-PORT=8080
-HOST=
-mongoDB=YourMongoURL
-seedDb=true
 secret=YourJWTSecret
+NODE_ENV=development
+PORT=8080
+HOST=localhost
+MONGO_DB=YourMongoURL
+SECRET=ilikecake
 ______________________
 
 ## API Design
@@ -37,16 +49,37 @@ Give an overview of your web API design, perhaps similar to the following:
 - /api/movies/{movieid} | GET | Gets a single movie
 - /api/movies/{movieid}/reviews | GET | Get all reviews for movie
 - /api/movies/{movieid}/reviews | POST | Create a new review for Movie
+- /login" | GET | login
+- /signup | GET | signup
+- /movies/favorites | GET | Gets Favourite Movies
+- /reviews/:id | GET | Gets reviews for movie
+- /movies/:id" | GET | Gets Movies
+- /reviews/form | GET | Brings you to a form to leave a review
+- /movies/upcoming | GET | Gets upcoming movies
+- /movies/trending" | GET | Gets trending movies
+- /movies/toprated | GET | Gets toprated movies
+- /movies/watchlist | GET | Gets watchlist
 
 If you have your API design on an online platform or graphic, please link to it (e.g. [Swaggerhub](https://app.swaggerhub.com/)).
 
 ## Security and Authentication
 
-Give details of authentication/security implemented on the API (e.g. passport/sessions). Indicate which routes are protected.
+I'm using a JWT-based Authentication
+The routes that are protected are 
+
+- /movies/favorites
+- /reviews/:id
+- /movies/:id
+- /reviews/form
+- /movies/upcoming
+- /movies/trending
+- /movies/toprated
+- /movies/watchlist
 
 ## Integrating with React App
 
-Describe how you integrated your React app with the API. List the views that use your Web API instead of the TMDB API. Describe any other updates to the React app from Assignment One.
+The Home page and Upcoming movies is getting the movies through the movies-api
+
 
 ## Independent learning (if relevant)
 
