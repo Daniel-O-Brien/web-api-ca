@@ -41,7 +41,7 @@ const queryClient = new QueryClient({
               <Route path="/" element={<HomePage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/signup" element={ <SignUpPage /> } />
-              <Route path="*" element={ <Navigate to="/login" /> } />
+              <Route path="*" element={ <Navigate to="/" /> } />
               <Route element={<ProtectedRoutes />}>
               <Route path="/movies/favorites" element={<FavoriteMoviesPage />} />
               <Route path="/reviews/:id" element={ <MovieReviewPage /> } />
@@ -51,6 +51,7 @@ const queryClient = new QueryClient({
               <Route path="/movies/trending" element={ <TrendingMoviesPage /> } />
               <Route path="/movies/toprated" element={ <TopRatedMoviesPage /> } />
               <Route path="/movies/watchlist" element={ <WatchlistMoviesPage /> } />
+                <Route path="/api/" element={ <WatchlistMoviesPage /> } />
               </Route>
             </Routes>
           </MoviesContextProvider>

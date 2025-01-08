@@ -8,7 +8,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Link } from "react-router-dom";
-import { getMovieRecommendations } from "../../api/tmdb-api";
+import { getMovieRecommendations } from "../../api/movies-api";
 import { excerpt } from "../../util";
 
 export default function MovieRecommendations({ movie }) {

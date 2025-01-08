@@ -11,7 +11,7 @@ import Select from "@mui/material/Select";
 import img from '../../images/pexels-dziana-hasanbekava-5480827.jpg'
 import { useQuery } from "react-query";
 import Spinner from '../spinner'
-import { getGenres } from "../../api/tmdb-api";
+import { getGenres } from "../../api/movies-api";
 
 
 const formControl =
