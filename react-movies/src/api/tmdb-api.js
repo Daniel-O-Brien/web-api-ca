@@ -1,3 +1,4 @@
+//Gets a movie based on its id
 export const getMovie = (args) => {
   //console.log(args)
   const [, idPart] = args.queryKey;
@@ -17,6 +18,7 @@ export const getMovie = (args) => {
       });
 };
 
+//Gets movie reviews based on its id
   export const getMovieReviews = ({ queryKey }) => {
     const [, idPart] = queryKey;
     const { id } = idPart;

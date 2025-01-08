@@ -1,5 +1,6 @@
 import fetch from 'node-fetch';
 
+//Gets a list of Movies
 export const getMovies = async () => {
     try {
         const response = await fetch(
@@ -16,6 +17,7 @@ export const getMovies = async () => {
     }
 };
 
+//Gets a Movie based on its id
 export const getMovie = async (id) => {
     try {
         const response = await fetch(
@@ -32,7 +34,7 @@ export const getMovie = async (id) => {
     }
 };
 
-
+//Gets upcoming movies
 export const getUpcomingMovies = async () => {
     try {
         const response = await fetch(
@@ -49,6 +51,7 @@ export const getUpcomingMovies = async () => {
     }
 };
 
+//Gets top rated movies
 export const getTopRated = async () => {
     try {
         const response = await fetch(
@@ -65,6 +68,7 @@ export const getTopRated = async () => {
     }
 };
 
+//Gets movie recommendations based on id of current movie
 export const getMovieRecommendations = async (id) => {
     try {
         const response = await fetch(
@@ -81,6 +85,7 @@ export const getMovieRecommendations = async (id) => {
     }
 };
 
+//Gets images for movie based on its id
 export const getMovieImages = async (id) => {
     try {
         const response = await fetch(
@@ -97,6 +102,7 @@ export const getMovieImages = async (id) => {
     }
 };
 
+//Gets reviews for a movie based on its id
 export const getMovieReviews = async (id) => {
     try {
         const response = await fetch(
@@ -113,6 +119,7 @@ export const getMovieReviews = async (id) => {
     }
 };
 
+//Gets trending movies
 export const getTrending = async () => {
     try {
         const response = await fetch(
@@ -129,6 +136,7 @@ export const getTrending = async () => {
     }
 };
 
+//Gets all genres
 export const getGenres = async () => {
     try {
         const response = await fetch(

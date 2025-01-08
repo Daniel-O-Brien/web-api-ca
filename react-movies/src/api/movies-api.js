@@ -1,3 +1,5 @@
+
+//Gets a list of Movies
 export const getMovies = async () => {
     const response = await fetch(
         'http://localhost:8080/api/movies', {
@@ -9,6 +11,7 @@ export const getMovies = async () => {
     return response.json();
 };
 
+//Gets a Movie based on its id
 export const getMovie = async (args) => {
     console.log("queryKey:", args.queryKey);
     const [, idPart] = args.queryKey;
@@ -23,6 +26,8 @@ export const getMovie = async (args) => {
     return response.json();
 };
 
+
+//Gets upcoming movies
 export const getUpcoming = async () => {
     const response = await fetch(
         'http://localhost:8080/api/movies/tmdb/upcoming', {
@@ -34,6 +39,7 @@ export const getUpcoming = async () => {
     return response.json();
 };
 
+//Gets all genres
 export const getGenres = async () => {
     const response = await fetch(
         'http://localhost:8080/api/movies/tmdb/genres', {
@@ -45,6 +51,7 @@ export const getGenres = async () => {
     return response.json();
 };
 
+//Gets top rated movies
 export const getTopRated = async () => {
     const response = await fetch(
         'http://localhost:8080/api/movies/tmdb/topRated', {
@@ -56,6 +63,7 @@ export const getTopRated = async () => {
     return response.json();
 };
 
+//Gets trending movies
 export const getTrending = async () => {
     const response = await fetch(
         'http://localhost:8080/api/movies/tmdb/trending/', {
@@ -67,6 +75,7 @@ export const getTrending = async () => {
     return response.json();
 };
 
+//Gets movie recommendations based on id of current movie
 export const getMovieRecommendations = async (args) => {
     const [, idPart] = args.queryKey;
     const { id } = idPart;
@@ -80,6 +89,7 @@ export const getMovieRecommendations = async (args) => {
     return response.json();
 };
 
+//Gets images for movie based on its id
 export const getMovieImages = async (args) => {
     const [, idPart] = args.queryKey;
     const { id } = idPart;
@@ -93,6 +103,7 @@ export const getMovieImages = async (args) => {
     return response.json();
 };
 
+//Gets reviews for a movie based on its id
 export const getMovieReviews = async (args) => {
     const [, idPart] = args.queryKey;
     const { id } = idPart;
@@ -106,6 +117,7 @@ export const getMovieReviews = async (args) => {
     return response.json();
 };
 
+//authenticates login
 export const login = async (username, password) => {
     const response = await fetch('http://localhost:8080/api/users', {
         headers: {
@@ -117,6 +129,7 @@ export const login = async (username, password) => {
     return response.json();
 };
 
+//creates new user
 export const signup = async (username, password) => {
     const response = await fetch('http://localhost:8080/api/users?action=register', {
         headers: {
