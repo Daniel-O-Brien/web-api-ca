@@ -13,7 +13,7 @@ A bullet-point list of the ADDITIONAL features you have implemented in the API *
 
 ## Setup requirements.
 
-[ Outline any non-standard setup steps necessary to run your app locally after cloning the repo.]
+run npm install and then npm start
 
 ## API Configuration
 
@@ -26,7 +26,6 @@ react-movies .env file
 
 ----------------------------
 REACT_APP_TMDB_KEY="apikey"
-
 FAST_REFRESH=false
 
 -----------------------------
@@ -34,11 +33,11 @@ FAST_REFRESH=false
 movies-api .env file
 
 ______________________
-secret=YourJWTSecret
 NODE_ENV=development
 PORT=8080
 HOST=localhost
 MONGO_DB=YourMongoURL
+TMDB_KEY="apikey"
 SECRET=ilikecake
 ______________________
 
@@ -60,8 +59,6 @@ Give an overview of your web API design, perhaps similar to the following:
 - /movies/toprated | GET | Gets toprated movies
 - /movies/watchlist | GET | Gets watchlist
 
-If you have your API design on an online platform or graphic, please link to it (e.g. [Swaggerhub](https://app.swaggerhub.com/)).
-
 ## Security and Authentication
 
 I'm using a JWT-based Authentication
@@ -78,9 +75,4 @@ The routes that are protected are
 
 ## Integrating with React App
 
-The Home page and Upcoming movies is getting the movies through the movies-api
-
-
-## Independent learning (if relevant)
-
-Briefly explain any non-standard features developed for the app.   
+The Home page, Upcoming, Trending, Top Rated, Genres, and Movie Recommendations are all gotten through the movies-api
