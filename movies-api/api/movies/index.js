@@ -8,7 +8,8 @@ import {
     getTopRated,
     getTrending,
     getMovieRecommendations,
-    getMovieImages
+    getMovieImages,
+    getMovieReviews
 } from '../tmdb-api';
 
 
@@ -82,6 +83,12 @@ router.get('/tmdb/movie/:id/images', asyncHandler(async (req, res) => {
     const id = parseInt(req.params.id);
     const images = await getMovieImages(id);
     res.status(200).json(images);
+}));
+
+router.get('/tmdb/movie/:id/reviews', asyncHandler(async (req, res) => {
+    const id = parseInt(req.params.id);
+    const reviews = await getMovieReviews(id);
+    res.status(200).json(reviews);
 }));
 
 export default router;

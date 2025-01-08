@@ -10,6 +10,7 @@ export const getMovies = async () => {
 };
 
 export const getMovie = async (args) => {
+    console.log("queryKey:", args.queryKey);
     const [, idPart] = args.queryKey;
     const { id } = idPart;
     const response = await fetch(
@@ -83,7 +84,20 @@ export const getMovieImages = async (args) => {
     const [, idPart] = args.queryKey;
     const { id } = idPart;
     const response = await fetch(
-        `http://localhost:8080/api/movies/tmdb/${id}/images`, {
+        `http://localhost:8080/api/movies/tmdb/movie/${id}/images`, {
+            headers: {
+                'Authorization': window.localStorage.getItem('token')
+            }
+        }
+    )
+    return response.json();
+};
+
+export const getMovieReviews = async (args) => {
+    const [, idPart] = args.queryKey;
+    const { id } = idPart;
+    const response = await fetch(
+        `http://localhost:8080/api/movies/tmdb/movie/${id}/reviews`, {
             headers: {
                 'Authorization': window.localStorage.getItem('token')
             }
